@@ -62,6 +62,7 @@ class board:
             self.print_board() 
 
     def print_board(self):
+        
         os.system('clear')
         for row in self.board:
             print(''.join(map(str, row))) 
