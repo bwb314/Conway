@@ -18,15 +18,11 @@ class board:
     def randomly_populate(self):
         
         seed = random.getrandbits(self.rows*self.cols)
-        i = j = 0
-        while seed:
-            self.board[i][j] = seed&1
-            seed >>= 1
-            j += 1
-            if j == self.cols:
-                i += 1
-                j = 0
-   
+        for i in range(self.rows):
+            for j in range(self.cols):
+                self.board[i][j] = seed&1
+                seed >>= 1
+ 
     def tick(self):
 
         #Any live cell with two or three neighbors survives.
